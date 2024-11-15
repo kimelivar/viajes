@@ -8,13 +8,14 @@ pipeline {
         }
         stage('Compilar y Construir') {
             steps {
-                bat './mvnw clean package'  // Usar 'bat' en lugar de 'sh' en Windows
+                bat 'mvnw.cmd clean package'  // Usar 'mvnw.cmd' en Windows
             }
         }
         stage('Ejecutar Aplicación') {
             steps {
-                bat 'java -jar target/viajes-0.0.1-SNAPSHOT.jar'  // Usar 'bat' en lugar de 'sh' en Windows
+                bat 'java -jar target/viajes-0.0.1-SNAPSHOT.jar'  // Usar 'bat' para ejecutar en Windows
             }
         }
     }
 }
+
