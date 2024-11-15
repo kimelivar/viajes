@@ -8,12 +8,12 @@ pipeline {
         }
         stage('Compilar y Construir') {
             steps {
-                sh './mvnw clean package'  // Para un proyecto Maven
+                bat './mvnw clean package'  // Usar 'bat' en lugar de 'sh' en Windows
             }
         }
         stage('Ejecutar Aplicación') {
             steps {
-                sh 'java -jar target/viajes-0.0.1-SNAPSHOT.jar'  // Ajusta el nombre del JAR
+                bat 'java -jar target/viajes-0.0.1-SNAPSHOT.jar'  // Usar 'bat' en lugar de 'sh' en Windows
             }
         }
     }
